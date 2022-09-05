@@ -3,6 +3,9 @@ import { Badge } from '@mui/material'
 import React from 'react'
 import styled from 'styled-components'
 
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 const Container = styled.div`
     height: 60px;
 `
@@ -42,6 +45,8 @@ const Center = styled.div`
 
 const Logo = styled.h1`
     font-weight: bold;
+    cursor: pointer;
+    
 `
 const Right = styled.div`
     flex: 1;
@@ -54,7 +59,9 @@ const MenuItem = styled.div`
     font-size: 16px;
     cursor: pointer;
     margin-left: 25px;
+    text-decoration: none;
 `
+
 
 const Navbar = () => {
   return (
@@ -67,13 +74,17 @@ const Navbar = () => {
                     <Search style={{color:'gray', fontSize:16}}/>
                 </SearchContainer>
                 </Left>
-              <Center><Logo>Shopy!</Logo></Center>
+              <Center><Logo><NavLink to ="/">Shopy!</NavLink></Logo></Center>
             <Right>
-                <MenuItem>REGISTER</MenuItem>
-                <MenuItem>SIGN IN</MenuItem>
+                <MenuItem><Link style={{ textDecoration: 'none' }} to ="/Register">REGISTER</Link></MenuItem>
+                
+                <MenuItem><Link style={{ textDecoration: 'none' }} to="/Login">SIGN IN</Link></MenuItem>
+                
                 <MenuItem>
                       <Badge badgeContent={4} color="primary">
-                          <ShoppingCartOutlined color="action" />
+                        <Link to = "/Cart">
+                            <ShoppingCartOutlined color="action" />
+                        </Link>                        
                       </Badge>
                 </MenuItem>
             </Right>
