@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { mobile } from "../responsive"
+
 
 const Container = styled.div`
     
@@ -16,10 +18,13 @@ const Filter = styled.div`
 const Select = styled.select`
     padding: 10px;
     margin-right:20px;
+    ${mobile({ marginRight: "-10px" })}
+    
+    
 `
 
 const Option = styled.option`
-    
+    ${mobile({ fontSize: "10px" })}
 `
 
 
@@ -33,10 +38,10 @@ const SortProduct = () => {
                           Newest
                       </Option>
                       <Option>
-                          Price (asc)
+                          Price (High to Low)
                       </Option>
                       <Option>
-                          Price (dsc)
+                          Price (Low to High)
                       </Option>
                   </Select>
               </Filter>

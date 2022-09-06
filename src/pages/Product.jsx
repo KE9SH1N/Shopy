@@ -11,7 +11,7 @@ import Newsletter from '../components/Newsletter'
 import { Remove } from '@mui/icons-material'
 import { Add } from '@mui/icons-material'
 
-
+import { mobile } from "../responsive"
 
 const Container = styled.div`
     
@@ -20,35 +20,41 @@ const Container = styled.div`
 const Wrapper = styled.div`
     padding: 50px;
     display: flex;
+    ${mobile({ flexDirection: "column",padding: "10px" })}
 `
 
 const ImageContainer = styled.div`
-    flex: 1;
+    flex: 1; 
 `
 
 const Image = styled.img`
     width: 100%;
     height: 70vh;
     object-fit: cover;
+    ${mobile({ height: "40vh"})} 
 `
 
 const InfoContainer = styled.div`
     flex: 1;
     padding: 0px 50px;
+    ${mobile({ marginTop: "10px", padding:"0px 0px" })} 
 `
 
 const Title = styled.h1`
     font-weight: 200;
+    ${mobile({ alignItems: "center", justifyContent: "center",display:"flex" })} 
 
 `
 
 const Description = styled.p`
     margin: 20px 0px;
+    ${mobile({ textAlign: "justify" })} 
 `
 
 const Price = styled.span`
     font-weight: 100;
     font-size: 40px;
+    ${mobile({ fontSize: "30px",fontWeight: "300" })} 
 `
 
 const Filter = styled.div`
@@ -60,6 +66,8 @@ const AddContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
+    ${mobile({ width: "100%" })}
 `
 
 const AmountContainer = styled.div`
@@ -143,7 +151,7 @@ const Product = () => {
                         <Amount>1</Amount>
                         <RemoveItem><Add /></RemoveItem>
                     </AmountContainer>
-                    <Button>Add To Cart</Button>
+                    <Button>Add to Cart</Button>
                 </AddContainer>
                 
             </InfoContainer>

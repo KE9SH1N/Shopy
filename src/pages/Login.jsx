@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from "react-router-dom"
+import { mobile } from "../responsive"
+
 
 const Container = styled.div`
     width: 100vw;
@@ -23,6 +25,7 @@ const Wrapper = styled.div`
     width: 20%;
     padding: 50px;
     background-color: white;
+    ${mobile({ width: "70%", height: "30vh" })}
 `
 
 const Title = styled.h1`

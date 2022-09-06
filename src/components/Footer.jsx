@@ -9,9 +9,11 @@ import { Room } from '@mui/icons-material'
 import { Phone } from '@mui/icons-material'
 import { Mail } from '@mui/icons-material'
 
+import { mobile } from "../responsive"
+
 const Container =styled.div`
     display: flex;
-    
+    ${mobile({ flexDirection: "column" })}
 `
 const Left = styled.div`
     flex: 1;
@@ -50,6 +52,7 @@ const SocialIcon = styled.div`
 const Center = styled.div`
     flex: 1;
     padding: 20px;
+    ${mobile({ display: "none" })}
 `
 
 const Title = styled.h1`
@@ -81,6 +84,7 @@ const ListItem = styled.li`
 const Right = styled.div`
     flex: 1;
     padding: 20px;
+    ${mobile({ backgroundColor: "#ccf1f058" })}
 `
 const Contact = styled.div`
     display: flex;

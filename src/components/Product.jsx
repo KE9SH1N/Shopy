@@ -1,7 +1,7 @@
 import React from 'react'
 import { SearchOutlined, ShoppingCartOutlined, FavoriteBorderOutlined } from '@mui/icons-material'
 import styled from 'styled-components'
-
+import { mobile } from "../responsive"
 
 
 const Info = styled.div`
@@ -36,6 +36,8 @@ const Container = styled.div`
     &:hover ${Info}{
         opacity: 1;
     }
+
+    ${mobile({ minWidth: "300px" })}
 `
 
 const Circle = styled.div`

@@ -1,12 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { mobile } from "../responsive"
+
 const Container = styled.div`
     
 `
 const FilterContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    
 `
 const Filter = styled.div`
     margin-top: 20px;

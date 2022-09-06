@@ -9,24 +9,40 @@ import FilterProduct from '../components/FilterProduct'
 import SortProduct from '../components/SortProduct'
 
 
+import { mobile } from "../responsive"
+
 const Container = styled.div`
     
 `
 
 const Title = styled.h1`
     margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
 const Filter = styled.div`
     margin: 20px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
+    ${mobile({ display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center" })}
+`
+
+const FilterItem = styled.div`
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    ${mobile({ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center" })}
 `
 
 const FilterText = styled.div`
     font-size: 24px;
     font-weight: 600;
     margin-right: 20px;
+    ${mobile({ display: "none" })}
 `
 
 const ProductList = () => {
@@ -37,8 +53,11 @@ const ProductList = () => {
         <Title>Dresses</Title>
         <Filter>
             <FilterText>Filter</FilterText>
-            <FilterProduct />
-            <SortProduct/>
+            <FilterItem>
+                <FilterProduct />
+                <SortProduct />
+            </FilterItem>
+            
         </Filter>
         <Products/>
         <Newsletter/>
